@@ -4,12 +4,11 @@ Simple python script, works on both CLI and through a little GUI window, to make
 
 A1 EVO Neuron (almost) as easy as using the receiver's built-in Audyssey calibration!
 
-
 ## IMPORTANT NOTES
 
 REQUIRES A PRO UPGRADE FOR REW!
 
-- It's not a lot of money relative to the high end gear we're calibrating here, and John does AMAZING work and provides insane amounts of free support!  Let's support him back if we're able!
+- It's not a lot of money relative to the high end gear we're calibrating here, and John does AMAZING work and provides insane amounts of free support!  Let's [support him back](https://www.roomeqwizard.com/upgrades.html) if we're able!
 
 Must be run from the directory you have your Atmos sweep files in
 
@@ -22,4 +21,4 @@ Timeouts and WAV file expectations are set for 1M sweeps
 
 OCA deserves our support too!
 
-* OCA also does INCREDIBLE work too, giving us INSANE value out of our already expensive hardware!  Don't forget you can send him a 'tip' from any of his YouTube videos!
+* OCA also does INCREDIBLE work too, giving us INSANE value out of our already expensive hardware!  Don't forget you can send him a 'tip' from [any of his YouTube videos](https://www.youtube.com/@ocaudiophile/videos)!
