@@ -54,7 +54,7 @@ def start_capture(channel, position, status_callback=None):
         else:
             print(err_msg)
 
-def run_measurement(channels, num_positions, status_callback=print):
+def run_measurement(mode, channels, num_positions, status_callback=print):
     channels = [ch.strip() for ch in channels.split(",")]
     try:
         num_positions = int(num_positions)
@@ -63,7 +63,8 @@ def run_measurement(channels, num_positions, status_callback=print):
         return
 
     status_callback("Make sure REW is running and mic is at position 0 (MLP).")
-    input("Press Enter to continue...")
+    if mode == "cli":
+        input("Press Enter to continue...")
 
     initial_count = get_sample_count()
     if initial_count == -1:
@@ -96,7 +97,7 @@ def run_measurement(channels, num_positions, status_callback=print):
                 status_callback(f"Timeout waiting for {sample_name}. Exiting.")
                 return
 
-    status_callback("All samples complete. Start Supreme Audyssey if desired.")
+    status_callback("All samples complete. Please follow OCA's instructions for running A1 Evo Neuron next.")
 
 def cli():
     if len(sys.argv) != 3:
@@ -106,7 +107,7 @@ def cli():
 
     channels = sys.argv[1]
     positions = sys.argv[2]
-    run_measurement(channels, positions)
+    run_measurement("cli", channels, positions)
 
 def launch_gui():
     def on_start():
@@ -115,7 +116,7 @@ def launch_gui():
         if not ch or not pos:
             messagebox.showwarning("Missing Info", "Please enter both fields.")
             return
-        run_measurement(ch, pos, update_status)
+        run_measurement("gui", ch, pos, update_status)
 
     def update_status(msg):
         status_text.set(msg)
