@@ -30,6 +30,7 @@ def start_capture(channel, position, status_callback=None):
         requests.post(f"{REW_API_BASE_URL}/measure/measurement-mode", json="Single").raise_for_status()
         requests.post(f"{REW_API_BASE_URL}/measure/naming", json={"title": sample_name}).raise_for_status()
         requests.post(f"{REW_API_BASE_URL}/measure/playback-mode", json="From file").raise_for_status()
+        requests.post(f"{REW_API_BASE_URL}/measure/timing/reference", json="Acoustic").raise_for_status()
         requests.post(f"{REW_API_BASE_URL}/measure/file-playback-stimulus", json=stimulus_path).raise_for_status()
         requests.post(f"{REW_API_BASE_URL}/measure/command", json={"command": "SPL"}).raise_for_status()
 
